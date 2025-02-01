@@ -44,7 +44,7 @@ jobs:
 
       - name: Update tag
         run: |
-          sed -i 's/tag: .*/tag: "${{github.run_id}}"/' helm/mywebsite-chart/values.yaml
+          sed -i 's/tag: .*/tag: "${{github.run_id}}"/' helm/mywesite-chart/values.yaml
 
       - name: Commit and push changes
         run: |

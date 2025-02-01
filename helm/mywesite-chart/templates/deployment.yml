@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cdacproject
+spec:
+  selector:
+    matchLabels:
+      app: cdacproject
+  template:
+    metadata:
+      labels:
+        app: cdacproject
+    spec:
+      containers:
+      - name: cdacproject
+        image: dockersunbeam/cdacproject:{{ .Values.image.tag }}
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
